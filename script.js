@@ -25,8 +25,17 @@ let div = document.createElement("div");
 root.appendChild(div);
 
     let password = document.createElement("input");
-    password.type = "password";
+    password.type = "text";
     password.id = "password"
     password.placeholder = "Password";
 
 root.appendChild(password);
+
+let div1 = document.createElement("div");
+root.appendChild(div1);
+
+    let loginBtn = document.createElement("button");
+    loginBtn.type = "button";
+    loginBtn.innerText ="Logga in"
+
+root.appendChild(loginBtn);    
