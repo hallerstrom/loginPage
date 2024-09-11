@@ -39,8 +39,8 @@ root.appendChild(div1);
 
     let loginBtn = document.createElement("button");
     loginBtn.type = "button";
-    loginBtn.innerText = "Logga in"
-    loginBtn.id = "loginBtn"
+    loginBtn.innerText = "Logga in";
+    loginBtn.id = "loginBtn";
 
 root.appendChild(loginBtn);    
 
@@ -55,6 +55,14 @@ loginBtn.addEventListener("click", function(){
         const welcome = document.createElement("h3");
         welcome.textContent = "Välkommen!";
         root.appendChild(welcome);
+
+        let logoutBtn = document.createElement("button");
+        logoutBtn.type = "button";
+        logoutBtn.innerText = "Logga ut";        
+        logoutBtn.id = "logoutBtn";
+
+        root.appendChild(logoutBtn);    
+
         }
 
 });
