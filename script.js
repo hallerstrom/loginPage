@@ -16,33 +16,33 @@ let main = document.createElement("main");
 
 root.appendChild(main);
 
+function loginForm(){
+
+    main.innerHTML = "";
+
     let userName = document.createElement("input");
     userName.type = "text";
     userName.id = "username"
     userName.placeholder = "Username";
-
-root.appendChild(userName);
+    main.appendChild(userName);
 
 let div = document.createElement("div");
-
-root.appendChild(div);
+main.appendChild(div);
 
     let password = document.createElement("input");
     password.type = "text";
     password.id = "password"
     password.placeholder = "Password";
-
-root.appendChild(password);
+    main.appendChild(password);
 
 let div1 = document.createElement("div");
-root.appendChild(div1);
+main.appendChild(div1);
 
     let loginBtn = document.createElement("button");
     loginBtn.type = "button";
     loginBtn.innerText = "Logga in";
     loginBtn.id = "loginBtn";
-
-root.appendChild(loginBtn);    
+    main.appendChild(loginBtn);    
 
 loginBtn.addEventListener("click", function(){
     const username = document.getElementById("username").value;
@@ -50,19 +50,25 @@ loginBtn.addEventListener("click", function(){
 
     if (username === correctUser && password === correctPassword) {
         
-        root.innerHTML = "";
+        main.innerHTML = "";
 
         const welcome = document.createElement("h3");
         welcome.textContent = "Välkommen!";
-        root.appendChild(welcome);
+        main.appendChild(welcome);
 
         let logoutBtn = document.createElement("button");
         logoutBtn.type = "button";
         logoutBtn.innerText = "Logga ut";        
         logoutBtn.id = "logoutBtn";
+        
+        main.appendChild(logoutBtn);
 
-        root.appendChild(logoutBtn);    
+        logoutBtn.addEventListener("click", function() {
+            loginForm();
+        });
 
-        }
+        };
+    });
+};
 
-});
+loginForm ();
