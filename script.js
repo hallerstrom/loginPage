@@ -1,3 +1,6 @@
+const correctUser = "test"
+const correctPassword = "1234"
+
 let root = document.getElementById("root");
 
 let header = document.createElement("header");
@@ -36,6 +39,22 @@ root.appendChild(div1);
 
     let loginBtn = document.createElement("button");
     loginBtn.type = "button";
-    loginBtn.innerText ="Logga in"
+    loginBtn.innerText = "Logga in"
+    loginBtn.id = "loginBtn"
 
 root.appendChild(loginBtn);    
+
+loginBtn.addEventListener("click", function(){
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username === correctUser && password === correctPassword) {
+        
+        root.innerHTML = "";
+
+        const welcome = document.createElement("h3");
+        welcome.textContent = "Välkommen!";
+        root.appendChild(welcome);
+        }
+
+});
