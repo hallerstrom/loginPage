@@ -51,6 +51,7 @@ loginBtn.addEventListener("click", function(){
     if (username === correctUser && password === correctPassword) {
         
         main.innerHTML = "";
+        header.innerHTML ="";
 
         const welcome = document.createElement("h3");
         welcome.textContent = "Välkommen!";
@@ -63,12 +64,23 @@ loginBtn.addEventListener("click", function(){
         
         main.appendChild(logoutBtn);
 
-        logoutBtn.addEventListener("click", function() {
-            loginForm();
-        });
+        
 
-        };
+        logoutBtn.addEventListener("click", function() { 
+            loginForm();
+              
+        });
+        } else {
+
+            root.innerHTML ="";
+
+            let wrong = document.createElement("h3");
+            wrong.innerText = "Något blev fel!";
+            root.appendChild(wrong);
+        }
+       
     });
 };
 
+   
 loginForm ();
