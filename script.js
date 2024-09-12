@@ -56,28 +56,14 @@ loginBtn.addEventListener("click", function(){
         main.innerHTML = "";
         header.innerHTML ="";
 
-        const welcome = document.createElement("h3");
-        welcome.textContent = "Välkommen!";
-        main.appendChild(welcome);
-
-        let logoutBtn = document.createElement("button");
-        logoutBtn.type = "button";
-        logoutBtn.innerText = "Logga ut";        
-        logoutBtn.id = "logoutBtn";
-        
-        main.appendChild(logoutBtn);
+        //const welcome = document.createElement("h3");
+        //welcome.textContent = "Välkommen!";
+        //main.appendChild(welcome);
 
         
-
-        logoutBtn.addEventListener("click", function() {
-
-            localStorage.removeItem("username", username);
-            localStorage.removeItem("password", password);
-
-            header.appendChild(logo);
-            loginForm();
               
-        });
+       welcomeUser();
+
         } else {
 
             root.innerHTML ="";
@@ -90,5 +76,41 @@ loginBtn.addEventListener("click", function(){
     });
 };
 
+function welcomeUser(){
 
-loginForm ();
+        main.innerHTML=""
+
+        const welcomeUser = document.createElement("h3");
+        welcomeUser.textContent = "Välkommen!";
+        main.appendChild(welcomeUser);
+
+        let logoutBtn = document.createElement("button");
+        logoutBtn.type = "button";
+        logoutBtn.innerText = "Logga ut";        
+        logoutBtn.id = "logoutBtn";
+        
+        main.appendChild(logoutBtn);
+
+        logoutBtn.addEventListener("click", function () {
+
+            localStorage.removeItem("username");
+            localStorage.removeItem("password");
+
+            header.appendChild(logo);
+            loginForm();
+        });
+}
+    
+
+
+function checkUser(){
+    const loggedIn = localStorage.getItem("username");
+    if (loggedIn){
+        header.innerHTML = ""
+        welcomeUser();
+    } else{
+        loginForm();
+    }
+}
+
+checkUser();
