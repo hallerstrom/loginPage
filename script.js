@@ -48,7 +48,7 @@ loginBtn.addEventListener("click", function(){
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    if (username == correctUser, password == correctPassword) {
+    if (username === correctUser && password === correctPassword) {
 
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
@@ -73,6 +73,8 @@ loginBtn.addEventListener("click", function(){
 
             localStorage.removeItem("username", username);
             localStorage.removeItem("password", password);
+
+            header.appendChild(logo);
             loginForm();
               
         });
@@ -88,5 +90,5 @@ loginBtn.addEventListener("click", function(){
     });
 };
 
-   
+
 loginForm ();
