@@ -7,7 +7,6 @@ let header = document.createElement("header");
 
 let logo = document.createElement("h1");
 logo.innerText = "Logga in";
-logo.classList.add("logo");
 
 header.appendChild(logo);
 root.appendChild(header);
@@ -41,7 +40,7 @@ main.appendChild(div1);
     let loginBtn = document.createElement("button");
     loginBtn.type = "button";
     loginBtn.innerText = "Logga in";
-    loginBtn.id = "loginBtn";
+
     main.appendChild(loginBtn);    
 
 loginBtn.addEventListener("click", function(){
@@ -69,7 +68,6 @@ loginBtn.addEventListener("click", function(){
             let returnBtn = document.createElement("button");
             returnBtn.type = "button";
             returnBtn.innerText = "Tillbaka";        
-            returnBtn.id = "returnBtn";
         
             main.appendChild(returnBtn);
 
@@ -94,7 +92,6 @@ function welcomeUser(){
         let logoutBtn = document.createElement("button");
         logoutBtn.type = "button";
         logoutBtn.innerText = "Logga ut";        
-        logoutBtn.id = "logoutBtn";
         
         main.appendChild(logoutBtn);
 
