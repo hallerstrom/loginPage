@@ -55,13 +55,7 @@ loginBtn.addEventListener("click", function(){
         
         main.innerHTML = "";
         header.innerHTML ="";
-
-        //const welcome = document.createElement("h3");
-        //welcome.textContent = "Välkommen!";
-        //main.appendChild(welcome);
-
-        
-              
+  
        welcomeUser();
 
         } else {
@@ -96,13 +90,10 @@ function welcomeUser(){
             localStorage.removeItem("username");
             localStorage.removeItem("password");
 
-            header.appendChild(logo);
+            header.appendChild(logo);            
             loginForm();
         });
-}
-    
-
-
+}    
 function checkUser(){
     const loggedIn = localStorage.getItem("username");
     if (loggedIn){
