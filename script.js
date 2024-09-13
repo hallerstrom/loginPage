@@ -30,7 +30,7 @@ let div = document.createElement("div");
 main.appendChild(div);
 
     let password = document.createElement("input");
-    password.type = "text";
+    password.type = "password";
     password.id = "password"
     password.placeholder = "Password";
     main.appendChild(password);
@@ -51,7 +51,6 @@ loginBtn.addEventListener("click", function(){
     if (username === correctUser && password === correctPassword) {
 
         localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
         
         main.innerHTML = "";
         header.innerHTML ="";
@@ -60,11 +59,25 @@ loginBtn.addEventListener("click", function(){
 
         } else {
 
-            root.innerHTML ="";
+            main.innerHTML ="";
+            header.innerHTML ="";
 
             let wrong = document.createElement("h3");
             wrong.innerText = "Något blev fel!";
-            root.appendChild(wrong);
+            main.appendChild(wrong);
+
+            let returnBtn = document.createElement("button");
+            returnBtn.type = "button";
+            returnBtn.innerText = "Tillbaka";        
+            returnBtn.id = "returnBtn";
+        
+            main.appendChild(returnBtn);
+
+            returnBtn.addEventListener("click", function () {
+            main.innerHTML ="";
+            header.appendChild(logo);            
+            loginForm();
+        });
         }
        
     });
@@ -88,7 +101,6 @@ function welcomeUser(){
         logoutBtn.addEventListener("click", function () {
 
             localStorage.removeItem("username");
-            localStorage.removeItem("password");
 
             header.appendChild(logo);            
             loginForm();
